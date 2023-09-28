@@ -1,0 +1,18 @@
+---
+- name: Demo Webhook Playbook
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Trigger Webhook
+      uri:
+        url: "http://15.206.165.218:5000/webhook"
+        method: POST
+        body_format: json
+        body:
+          message: "Hello, World!"
+      register: webhook_response
+
+    - name: Print Webhook Response
+      debug:
+        var: webhook_response
