@@ -1,4 +1,3 @@
----
 - name: listen for events on a webhook
   hosts: localhost
   sources:
@@ -13,4 +12,4 @@
         run_job_template:
           name: Demo Job Template
           organization: Default
----
+
