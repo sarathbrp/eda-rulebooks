@@ -1,5 +1,5 @@
 - name: listen for events on a webhook
-  hosts: all
+  hosts: localhost
   sources:
     - ansible.eda.webhook:
         host: http://15.206.165.218:5000/webhook
