@@ -7,7 +7,11 @@
   rules:
     - name: Say hello
       condition: event.payload.message == "Ansible is cool"
-
       action:
-        run_playbook:
-          name: hello.yml
+        debug:
+          msg: 'Webhook triggered!'
+
+    - name: Shutdown
+      condition: event.payload.shutdown is defined
+      action:
+        shutdown:
