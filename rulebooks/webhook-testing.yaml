@@ -9,5 +9,6 @@
       condition: event.payload.message == "Ansible is cool"
 
       action:
-        run_playbook:
-          name: hello.yml
+        run_job_template:
+          name: test-template
+        
