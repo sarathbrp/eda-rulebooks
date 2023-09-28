@@ -1,12 +1,24 @@
 ---
-- name: Hello World
+---
+- name: Handle Webhook Payload
   hosts: all
-  sources:
-    - ansible.eda.range:
-        limit: 5
-  rules:
-    - name: Say Hello
-      condition: event.i == 1
-      action:
-        debug:
-          msg: 'Hello World!'
+  gather_facts: false
+  tasks:
+    - name: Send Webhook Payload
+      uri:
+        url: http://15.206.165.218:5000/webhook
+        method: GET
+      delegate_to: localhost
+      ignore_errors: yes
+      register: webhook_response
+
+    - name: Debug Webhook Response
+      debug:
+        var: webhook_response
+
+- name: Execute Playbook on Webhook Trigger
+  hosts: localhost
+  tasks:
+    - name: Run Ansible Playbook
+      ansible.builtin.command: ansible-playbook https://github.com/ranjanniket/ansible/blob/main/playbooks/hello_world.yml
+      when: "'hello from webhook' in webhook_response.stdout"
