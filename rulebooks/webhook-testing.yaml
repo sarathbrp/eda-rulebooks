@@ -6,7 +6,7 @@
         port: 5000
   rules:
     - name: Say hello
-      condition: event.payload.message == "Ansible is cool"
+      condition: event.payload.message == "Ansible webhook triggered"
 
       action:
         run_job_template:
