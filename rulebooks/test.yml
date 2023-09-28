@@ -1,6 +1,6 @@
 ---
 - name: Handle Webhook Payload
-  hosts: localhost
+  hosts: all
   gather_facts: false
   tasks:
     - name: Send Webhook Payload
