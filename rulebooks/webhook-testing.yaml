@@ -1,13 +1,12 @@
-- name: listen for events on a webhook
+- name: An example EDA webhook
   hosts: all
   sources:
     - ansible.eda.webhook:
-        host: 127.0.0.1
+        host: 0.0.0.0
         port: 5000
   rules:
-    - name: Say hello
-      condition: event.payload.message == "Ansible webhook triggered"
-
+    - name: Say Hello
+      condition: event.payload.message == "Who is in my house?"
       action:
         run_job_template:
           name: Demo Job Template
