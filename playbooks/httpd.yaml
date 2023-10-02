@@ -1,0 +1,17 @@
+---
+- hosts: all
+  tasks:
+    - name: Install Apache (httpd) package
+      package:
+        name: httpd
+        state: present
+
+    - name: Copy index.html to the web root
+      copy:
+        src: /root/index.html
+        dest: /var/www/html/index.html
+
+    - name: Start the Apache (httpd) service
+      service:
+        name: httpd
+        state: started
