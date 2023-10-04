@@ -10,6 +10,7 @@
       copy:
         src: /home/ec2-user/index.html
         dest: /var/www/html/
+        remote_src: yes
 
     - name: Start the Apache (httpd) service
       service:
