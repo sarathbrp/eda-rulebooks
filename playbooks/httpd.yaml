@@ -8,8 +8,8 @@
 
     - name: Copy index.html to the web root
       copy:
-        src: /home/ec2-user/index.html
-        dest: /var/www/html/index.html
+        src: index.html
+        dest: /var/www/html/
 
     - name: Start the Apache (httpd) service
       service:
