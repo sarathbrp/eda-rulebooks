@@ -8,7 +8,7 @@
 
     - name: Copy index.html to the remote
       copy:
-        src: /root/index.html
+        src: index.html
         dest: /var/www/html/
         remote_src: yes
 
