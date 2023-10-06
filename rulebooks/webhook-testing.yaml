@@ -9,6 +9,6 @@
       condition: event.payload.message == "Hello from webhook"
       action:
         run_job_template:
-          name: eda-demo
+          name: my-template
           organization: Default
 
