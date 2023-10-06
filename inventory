@@ -1,0 +1,53 @@
+[automationcontroller]
+ip_address_1  ansible_user=root  ansible_ssh_private_key_file=/root/niket-key.pem
+
+[automationcontroller:vars]
+peers=execution_nodes
+
+[execution_nodes]
+
+[automationhub]
+ip_address_2  ansible_user=root  ansible_ssh_private_key_file=/root/niket-key.pem
+
+[automationedacontroller]
+ip_address_3 ansible_connection=local ansible_user=root  ansible_ssh_private_key_file=/root/niket-key.pem
+
+[database]
+ip_address_4 ansible_user=root  ansible_ssh_private_key_file=/root/niket-key.pem
+
+[sso]
+
+[all:vars]
+admin_password='redhat'
+pg_host='ip_address_4'
+pg_port=5432
+pg_database='awx'
+pg_username='awx'
+pg_password='redhat'
+pg_sslmode='prefer'  # set to 'verify-full' for client-side enforced SSL
+
+registry_url='registry.redhat.io'
+registry_username=''
+registry_password=''
+
+
+automationhub_admin_password='redhat'
+automationhub_pg_host='ip_address_4'
+automationhub_pg_port=5432
+automationhub_pg_database='automationhub'
+automationhub_pg_username='automationhub'
+automationhub_pg_password='redhat'
+automationhub_pg_sslmode='prefer'
+
+
+automationedacontroller_admin_password='redhat'
+automationedacontroller_pg_host='ip_address_4'
+automationedacontroller_pg_port=5432
+automationedacontroller_pg_database='automationedacontroller'
+automationedacontroller_pg_username='automationedacontroller'
+automationedacontroller_pg_password='redhat'
+
+# Keystore password is required for https enabled SSO
+sso_keystore_password=''
+# Single-Sign-On configuration
+sso_console_admin_password=''
