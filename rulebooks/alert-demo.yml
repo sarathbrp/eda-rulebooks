@@ -1,5 +1,5 @@
 ---
-- name: Capture altermanager alerts
+- name: Capture alertmanager alerts
   hosts: all
   sources:
     - ansible.eda.alertmanager:
@@ -11,8 +11,9 @@
         skip_original_data: true
   rules:
     - name: SELinux was disabled  
-      condition: even.alert.labels.alertname == "selinux disabled" and event.alert.status == "firing"
+      condition: even.alert.labels.alertname == "selinux disabled" and even.alert.status == "firing"
       action:
         run_job_template:
           name: Demo Job Template
           organization: Default
+
