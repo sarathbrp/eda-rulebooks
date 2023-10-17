@@ -2,7 +2,7 @@
   hosts: localhost
   sources:
     - name: range
-      ansible.EDA-Controller.range:
+      ansible.eda.range:
         limit: 1000000
   rules:
     - name: r1
