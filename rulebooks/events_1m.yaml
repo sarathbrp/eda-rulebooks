@@ -1,6 +1,6 @@
 ---
 - name: "1M event rules"
-  hosts: all
+  hosts: localhost
   sources:
     - name: range
       ansible.EDA-Controller.range:
