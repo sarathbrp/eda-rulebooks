@@ -1,5 +1,4 @@
----
-- name: Hello Controller
+- name: Hello Controller run 100 jobs
   hosts: all
   sources:
      - ansible.EDA-Controller.range:
