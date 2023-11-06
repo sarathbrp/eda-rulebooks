@@ -1,7 +1,7 @@
 - name: Hello World
   hosts: localhost
   sources:
-    - ansible.eda.range
+    - ansible.eda.range:
         interval: 1
   rules:
     - name: Say Hello
