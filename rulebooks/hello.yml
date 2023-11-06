@@ -1,11 +1,12 @@
-- name: Hello World
+- name: Say Hello
   hosts: localhost
   sources:
-    - ansible.eda.range:
-        interval: 1
+    - name: range
+      ansible.eda.range:
+        limit: 10
   rules:
-    - name: Say Hello
-      condition: event.triggered
+    - name: r1
+      condition: event.i is defined
       action:
         ansible.builtin.debug:
           msg: "Hello"
