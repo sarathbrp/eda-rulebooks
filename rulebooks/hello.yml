@@ -1,8 +1,8 @@
 - name: Hello World
   hosts: localhost
   sources:
-    - ansible.eda.timer:
-        interval: 5
+    - ansible.eda.range
+        interval: 1
   rules:
     - name: Say Hello
       condition: event.triggered
