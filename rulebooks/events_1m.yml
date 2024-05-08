@@ -7,11 +7,11 @@
         display: true
         create_index: 0
         startup_delay: 0
-        event_delay: 0.1
+        event_delay: 0
         repeat_delay: 0
         loop_delay: 0
         shutdown_after: 0
-        loop_count: 1000
+        loop_count: 10000
         repeat_count: 1
         payload:
           - e1: 1
