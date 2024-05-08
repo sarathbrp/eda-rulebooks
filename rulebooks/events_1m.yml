@@ -1,9 +1,22 @@
 - name: "1M event rules"
   hosts: localhost
   sources:
-    - name: range
-      ansible.eda.range:
-        limit: 1000000
+    - name: generic
+      ansible.eda.generic:
+        randomize: false
+        display: false
+        timestamp: true
+        create_index: 0
+        startup_delay: 0
+        event_delay: 0.1
+        repeat_delay: 0
+        loop_delay: 0
+        shutdown_after: 0
+        loop_count: 1000000
+        repeat_count: 1
+        payload:
+          - name: Fred
+
   rules:
     - name: r1
       condition: event.i is defined
