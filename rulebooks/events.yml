@@ -1,15 +1,16 @@
 ---
 - name: "generate events"
-  hosts: all
+  hosts: localhost
   sources:
-	- name: generic
-  	  ansible.eda.generic:
-    	create_index: i
-    	loop_count: 1000000
-    	payload:
-      	- name: fred
+    - name: generic
+      ansible.eda.generic:
+      create_index: i
+      loop_count: 10000
+      payload:
+        - name: fred
   rules:
-	- name: r1
-  	condition: event.i is defined
-  	action:
-    	none:
+    - name: r1
+      condition: event.i is defined
+      action:
+        none:
+
