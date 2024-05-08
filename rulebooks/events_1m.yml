@@ -7,7 +7,7 @@
         display: true
         create_index: 1
         startup_delay: 0
-        event_delay: 0
+        event_delay: 1
         repeat_delay: 0
         loop_delay: 0
         shutdown_after: 1000
