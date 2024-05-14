@@ -1,5 +1,5 @@
 - name: Hello Controller
-  hosts: localhost
+  hosts: all
   sources:
     - ansible.eda.range:
         limit: 10
