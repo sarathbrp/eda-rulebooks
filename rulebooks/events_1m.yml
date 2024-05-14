@@ -7,9 +7,9 @@
         display: true
         create_index: 1
         startup_delay: 0
-        event_delay: 1
+        event_delay: 0
         repeat_delay: 0
-        loop_delay: 0
+        loop_delay: 1
         shutdown_after: 1000
         loop_count: 10000
         repeat_count: 1
