@@ -9,10 +9,10 @@
         startup_delay: 0
         event_delay: 0
         repeat_delay: 0
-        loop_delay: 1
+        loop_delay: 0
         shutdown_after: 1000
         loop_count: 10000
-        repeat_count: 1
+        repeat_count: 0
         payload:
           - e1: 1
           - e2: 2
