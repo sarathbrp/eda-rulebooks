@@ -11,6 +11,6 @@
   rules:
     - name: r1
       condition: event.name == "fred"
-      timeout: 60 minutes
+      timeout: 6 minutes
       action:
         debug:
