@@ -10,7 +10,7 @@
           - name: fred
   rules:
     - name: r1
-      condition: event.i is defined
+      condition: event.name == "fred"
       timeout: 6 minutes
       action:
-        none:
+        debug:
