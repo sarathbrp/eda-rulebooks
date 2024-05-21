@@ -1,5 +1,5 @@
 ---
-- name: "100k event rules"
+- name: "200k event rules"
   hosts: all
   sources:
     - name: generic
@@ -10,6 +10,9 @@
           - name: fred
   rules:
     - name: r1
-      condition: event.name == "fred"
+      condition:
+        all:
+          - event.name == "fred"
+        timeout: 6 minutes
       action:
-        none:
+        debug:
