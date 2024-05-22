@@ -9,7 +9,7 @@
         payload:
           - name: fred
           - name: berny
-        event_delay: 1
+        event_delay: 0.5
   rules:
     - name: r1
       condition:
