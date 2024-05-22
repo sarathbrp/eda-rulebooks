@@ -5,7 +5,7 @@
     - name: generic
       ansible.eda.generic:
         create_index: i
-        loop_count: 1000
+        loop_count: 200000
         payload:
           - name: fred
           - name: berny
