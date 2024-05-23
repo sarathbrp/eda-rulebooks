@@ -1,0 +1,19 @@
+- name: An example EDA webhook
+  hosts: localhost
+  sources:
+    - ansible.eda.pg_listener:
+        dsn:
+          host: localhost
+          port: 5432
+          dbname: testeda
+          user: edalisten
+          password: edalisten
+          channels:
+            - my_events
+  rules:
+    - name: Say Hello
+      condition: event.payload.message == "Hello!"
+      action:
+        run_job_template:
+          name: one
+          organization: Default
