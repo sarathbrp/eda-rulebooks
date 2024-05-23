@@ -6,8 +6,8 @@
         channels:
           - my_events
   rules:
-    - name: Say Hello
-      condition: event.payload.message == "Hello!"
+    - name: Say Name
+      condition: event.name == "Sarath"
       action:
         run_job_template:
           name: one
