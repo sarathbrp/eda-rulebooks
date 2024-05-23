@@ -2,12 +2,7 @@
   hosts: localhost
   sources:
     - ansible.eda.pg_listener:
-        dsn:
-          host: localhost
-          port: 5432
-          dbname: testeda
-          user: edalisten
-          password: edalisten
+        dsn: "host=localhost port=5432 dbname=testeda user=edalisten password=edalisten"
         channels:
           - my_events
   rules:
