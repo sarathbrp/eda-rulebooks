@@ -7,7 +7,7 @@
           - my_events
   rules:
     - name: Say Name
-      condition: event.name == "Sarath"
+      condition: event is defined
       action:
         run_job_template:
           name: one
