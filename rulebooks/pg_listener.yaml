@@ -8,8 +8,8 @@
           dbname: testeda
           user: edalisten
           password: edalisten
-          channels:
-            - my_events
+        channels:
+          - my_events
   rules:
     - name: Say Hello
       condition: event.payload.message == "Hello!"
