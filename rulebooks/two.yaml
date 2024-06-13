@@ -10,3 +10,4 @@
         run_job_template:
           name: two
           organization: Default
+  execution_strategy: parallel
