@@ -1,32 +1,16 @@
-- name: "1M event rules"
-  hosts: localhost
+---
+- name: "200k event rules"
+  hosts: all
   sources:
     - name: generic
       ansible.eda.generic:
-        randomize: false
-        display: true
-        create_index: 1
-        startup_delay: 0
-        event_delay: 0
-        repeat_delay: 0
-        loop_delay: 0
-        shutdown_after: 1000
-        loop_count: 10000
-        repeat_count: 0
+        create_index: i
+        loop_count: 200000
         payload:
-          - e1: 1
-          - e2: 2
-          - e3: 3
-          - e4: 4
-          - e5: 5
-          - e6: 6
-          - e7: 7
-          - e8: 8
-          - e9: 9
-          - e10: 10
-
+          - name: fred
   rules:
     - name: r1
-      condition: event.i is defined
+      condition: event.name == "fred"
+        timeout: 6 minutes
       action:
-        none: 
+        debug: 
